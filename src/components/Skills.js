@@ -1,0 +1,205 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { 
+  FaReact, 
+  FaNodeJs, 
+  FaJs, 
+  FaPython, 
+  FaHtml5, 
+  FaCss3Alt, 
+  FaGitAlt, 
+  FaAws,
+  FaDocker,
+  FaDatabase,
+  FaMobile,
+  FaCloud
+} from 'react-icons/fa';
+import './Skills.css';
+
+const Skills = () => {
+  const skillCategories = [
+    {
+      title: 'Frontend Development',
+      icon: FaReact,
+      skills: [
+        { name: 'React', level: 95, icon: FaReact },
+        { name: 'JavaScript', level: 90, icon: FaJs },
+        { name: 'HTML5', level: 95, icon: FaHtml5 },
+        { name: 'CSS3', level: 90, icon: FaCss3Alt },
+        { name: 'TypeScript', level: 85, icon: FaJs },
+        { name: 'Vue.js', level: 80, icon: FaJs }
+      ]
+    },
+    {
+      title: 'Backend Development',
+      icon: FaNodeJs,
+      skills: [
+        { name: 'Node.js', level: 90, icon: FaNodeJs },
+        { name: 'Python', level: 85, icon: FaPython },
+        { name: 'Express.js', level: 88, icon: FaNodeJs },
+        { name: 'REST APIs', level: 92, icon: FaNodeJs },
+        { name: 'GraphQL', level: 75, icon: FaNodeJs },
+        { name: 'Microservices', level: 80, icon: FaNodeJs }
+      ]
+    },
+    {
+      title: 'Database & Cloud',
+      icon: FaDatabase,
+      skills: [
+        { name: 'PostgreSQL', level: 85, icon: FaDatabase },
+        { name: 'MongoDB', level: 80, icon: FaDatabase },
+        { name: 'AWS', level: 75, icon: FaAws },
+        { name: 'Docker', level: 82, icon: FaDocker },
+        { name: 'Kubernetes', level: 70, icon: FaDocker },
+        { name: 'Redis', level: 78, icon: FaDatabase }
+      ]
+    },
+    {
+      title: 'Tools & Others',
+      icon: FaGitAlt,
+      skills: [
+        { name: 'Git', level: 90, icon: FaGitAlt },
+        { name: 'CI/CD', level: 85, icon: FaGitAlt },
+        { name: 'Testing', level: 80, icon: FaJs },
+        { name: 'Mobile Dev', level: 75, icon: FaMobile },
+        { name: 'DevOps', level: 78, icon: FaCloud },
+        { name: 'Agile', level: 88, icon: FaGitAlt }
+      ]
+    }
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const skillVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  return (
+    <section id="skills" className="skills">
+      <div className="container">
+        <motion.div
+          className="skills-content"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.div className="skills-header" variants={itemVariants}>
+            <h2>Skills & Expertise</h2>
+            <p className="skills-intro">
+              A comprehensive overview of my technical skills and expertise across different domains of software development.
+            </p>
+          </motion.div>
+
+          <div className="skills-grid">
+            {skillCategories.map((category, categoryIndex) => (
+              <motion.div
+                key={category.title}
+                className="skill-category"
+                variants={itemVariants}
+                whileHover={{ y: -5 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="category-header">
+                  <div className="category-icon">
+                    <category.icon />
+                  </div>
+                  <h3>{category.title}</h3>
+                </div>
+
+                <div className="skills-list">
+                  {category.skills.map((skill, skillIndex) => (
+                    <motion.div
+                      key={skill.name}
+                      className="skill-item"
+                      variants={skillVariants}
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <div className="skill-info">
+                        <div className="skill-icon">
+                          <skill.icon />
+                        </div>
+                        <span className="skill-name">{skill.name}</span>
+                        <span className="skill-level">{skill.level}%</span>
+                      </div>
+                      
+                      <div className="skill-bar">
+                        <motion.div
+                          className="skill-progress"
+                          initial={{ width: 0 }}
+                          whileInView={{ width: `${skill.level}%` }}
+                          viewport={{ once: true }}
+                          transition={{ 
+                            duration: 1.5, 
+                            delay: categoryIndex * 0.2 + skillIndex * 0.1,
+                            ease: "easeOut"
+                          }}
+                        />
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div className="skills-summary" variants={itemVariants}>
+            <div className="summary-card">
+              <h3>Technical Summary</h3>
+              <div className="summary-stats">
+                <div className="stat">
+                  <div className="stat-number">4+</div>
+                  <div className="stat-label">Years Experience</div>
+                </div>
+                <div className="stat">
+                  <div className="stat-number">25+</div>
+                  <div className="stat-label">Technologies</div>
+                </div>
+                <div className="stat">
+                  <div className="stat-number">50+</div>
+                  <div className="stat-label">Projects</div>
+                </div>
+                <div className="stat">
+                  <div className="stat-number">100%</div>
+                  <div className="stat-label">Dedication</div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
+
+export default Skills;
