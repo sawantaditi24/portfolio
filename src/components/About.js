@@ -5,10 +5,10 @@ import './About.css';
 
 const About = () => {
   const stats = [
-    { number: '3+', label: 'Years Experience' },
-    { number: '50+', label: 'Projects Completed' },
-    { number: '25+', label: 'Happy Clients' },
-    { number: '100%', label: 'Satisfaction Rate' }
+    { number: '2+', label: 'Years Experience' },
+    { number: '25+', label: 'Technologies' },
+    { number: '10+', label: 'Projects' },
+    { number: '100%', label: 'Dedication' }
   ];
 
   const values = [

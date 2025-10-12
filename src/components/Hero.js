@@ -3,7 +3,11 @@ import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
 import './Hero.css';
 
+// Import the profile photo
+import profilePhoto from '../assets/images/profile-photo.jpeg';
+
 const Hero = () => {
+
   const socialLinks = [
     { icon: FaGithub, href: 'https://github.com', label: 'GitHub' },
     { icon: FaLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
@@ -145,8 +149,24 @@ const Hero = () => {
           >
             <div className="profile-card">
               <div className="profile-image">
-                <div className="profile-placeholder">
-                  <span>AD</span>
+                <div className="profile-photo">
+                  <img 
+                    src={profilePhoto} 
+                    alt="Aditi - Full Stack Developer"
+                    onLoad={() => {
+                      console.log('✅ Image loaded successfully!');
+                      console.log('Image source:', profilePhoto);
+                    }}
+                    onError={(e) => {
+                      console.log('❌ Image failed to load');
+                      console.log('Trying to load:', profilePhoto);
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                  <div className="profile-placeholder" style={{display: 'none'}}>
+                    <span>AD</span>
+                  </div>
                 </div>
                 <div className="profile-ring"></div>
               </div>

@@ -5,10 +5,26 @@ import './Header.css';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      
+      // Detect active section
+      const sections = ['home', 'about', 'experience', 'skills', 'projects', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+      
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -16,12 +32,12 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', href: '#home', id: 'home' },
+    { name: 'About', href: '#about', id: 'about' },
+    { name: 'Experience', href: '#experience', id: 'experience' },
+    { name: 'Skills', href: '#skills', id: 'skills' },
+    { name: 'Projects', href: '#projects', id: 'projects' },
+    { name: 'Contact', href: '#contact', id: 'contact' }
   ];
 
   const scrollToSection = (href) => {
@@ -43,11 +59,11 @@ const Header = () => {
         <div className="nav-container">
           <motion.div 
             className="logo"
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
             <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('#home'); }}>
-              Aditi
+              Aditi Krishna Sawant
             </a>
           </motion.div>
 
@@ -64,7 +80,7 @@ const Header = () => {
                   <a 
                     href={item.href}
                     onClick={(e) => { e.preventDefault(); scrollToSection(item.href); }}
-                    className="nav-link"
+                    className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
                   >
                     {item.name}
                   </a>

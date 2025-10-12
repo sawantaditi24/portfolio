@@ -8,85 +8,83 @@ const Experience = () => {
 
   const experience = [
     {
-      title: 'Senior Full Stack Developer',
-      company: 'Tech Solutions Inc.',
-      period: '2022 - Present',
+      title: 'Student Research Assistant',
+      company: 'California State University, Long Beach',
+      period: '2024 - Present',
       type: 'experience',
-      description: 'Leading development of scalable web applications using React, Node.js, and cloud technologies.',
+      description: 'Built intelligent full-stack systems for freight safety and business analytics using FastAPI, Redis, and computer vision.',
       achievements: [
-        'Led a team of 5 developers in building a customer management platform',
-        'Improved application performance by 40% through code optimization',
-        'Implemented CI/CD pipelines reducing deployment time by 60%',
+        'Reduced investor research time by 28% through data aggregation.',
+        'Improved inventory automation by 42% via edge-optimized systems.',
+        'Enhanced freight safety by 33% with object detection models.',
         'Mentored junior developers and conducted code reviews'
       ],
-      technologies: ['React', 'Node.js', 'AWS', 'PostgreSQL', 'Docker']
+      technologies: ['React', 'GenAI', 'HTML/CSS', 'SQL', 'Docker']
     },
     {
-      title: 'Full Stack Developer',
-      company: 'Digital Innovations',
-      period: '2021 - 2022',
+      title: 'Software Engineer',
+      company: 'Data Axle Solutions',
+      period: '2022 - 2024',
       type: 'experience',
-      description: 'Developed and maintained web applications for various clients across different industries.',
+      description: 'I was responsible for end-to-end feature development, functionality enhancements, and bug fixes. My work involved collaborating closely with cross-functional teams to design and implement new features that aligned with product goals, while also refining existing functionalities to improve user experience and performance.',
       achievements: [
-        'Built responsive web applications serving 10,000+ daily users',
-        'Collaborated with design team to implement pixel-perfect UIs',
-        'Integrated third-party APIs and payment gateways',
-        'Participated in agile development processes'
+        'Boosted data quality and query performance by 40% through custom ORM validations.',
+        'Improved search scalability and speed by 65% with Elasticsearch integration.',
+        'Enabled real-time data monitoring for 19M+ records, improving quality by 83%.',
+        'Increased system reliability by 27% through automated testing pipelines.'
       ],
-      technologies: ['React', 'Express.js', 'MongoDB', 'JavaScript', 'CSS3']
+      technologies: ['Python', 'React', 'Ruby on Rails', 'PostgreSQL', 'AWS']
     },
     {
-      title: 'Frontend Developer',
+      title: 'Project Intern',
       company: 'WebCraft Studios',
       period: '2020 - 2021',
       type: 'experience',
       description: 'Focused on creating engaging user interfaces and improving user experience.',
       achievements: [
-        'Developed mobile-first responsive websites',
-        'Implemented modern CSS frameworks and animations',
-        'Optimized websites for better SEO and performance',
-        'Worked closely with UX/UI designers'
+        'Reduced delivery time by 2 days, increasing repeat purchases by 45% and cutting logistics costs.',
+        'Automated 70% of inventory checks for 1.5K+ assets, boosting operational efficiency.',
+        'Achieved 95% test coverage with 100+ integration tests, reducing QA troubleshooting time by 45%',
+        'Improved page load speed by 30%, enhancing user experience.'
       ],
-      technologies: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap', 'jQuery']
+      technologies: ['Java', 'JavaScript', 'Bootstrap', 'jQuery']
     }
   ];
 
   const education = [
     {
       title: 'Master of Science in Computer Science',
-      company: 'University of Technology',
-      period: '2018 - 2020',
+      university: 'California State University, Long Beach',
+      period: '2024 - 2025',
       type: 'education',
       description: 'Specialized in Software Engineering and Data Structures.',
-      achievements: [
-        'Graduated with Distinction (GPA: 3.8/4.0)',
-        'Completed thesis on "Machine Learning in Web Applications"',
-        'Participated in multiple hackathons and coding competitions',
-        'Served as President of Computer Science Society'
+      subjects: [
+        'Advanced Data Structures and Algorithms',
+        'Advanced Software Engineering',
+        'Design Patterns',
+        'Advanced Artificial Intelligence'
       ],
-      technologies: ['Python', 'Java', 'Machine Learning', 'Data Structures', 'Algorithms']
     },
     {
-      title: 'Bachelor of Science in Computer Science',
-      company: 'State University',
-      period: '2014 - 2018',
+      title: 'Bachelors in Computer Engineering',
+      university: 'Modern Education Society\'s College of Engineering',
+      period: '2018 - 2022',
       type: 'education',
       description: 'Foundation in computer science principles and programming.',
-      achievements: [
-        'Graduated Magna Cum Laude (GPA: 3.7/4.0)',
-        'Dean\'s List for 6 consecutive semesters',
-        'Completed capstone project on "E-commerce Platform"',
-        'Active member of Programming Club'
-      ],
-      technologies: ['C++', 'Java', 'Database Systems', 'Web Development', 'Software Engineering']
+      subjects: [
+        'Object Oriented Programming',
+        'Software Testing and Quality Assurance',
+        'Database Management Systems',
+        'Cloud Computing'
+      ]
     }
   ];
 
   const certifications = [
     {
-      title: 'AWS Certified Solutions Architect',
+      title: 'AWS Certified Cloud Practitioner',
       company: 'Amazon Web Services',
-      period: '2023',
+      period: 'October 2023 - October 2026',
       type: 'certification',
       description: 'Professional certification in designing distributed systems on AWS.',
       achievements: [
@@ -97,17 +95,17 @@ const Experience = () => {
       technologies: ['AWS', 'Cloud Architecture', 'DevOps', 'Security']
     },
     {
-      title: 'React Developer Certification',
-      company: 'Meta (Facebook)',
+      title: 'Burp Suite extension for script based attacks',
+      company: 'Cybersecurist',
       period: '2022',
-      type: 'certification',
-      description: 'Official certification in React development and best practices.',
+      type: 'Research paper',
+      description: 'Published research paper in IEEE Xplore conference.',
       achievements: [
-        'Mastered React hooks, context, and state management',
-        'Learned advanced patterns and performance optimization',
-        'Completed hands-on projects and assessments'
+        'Secured funding from Cybersecurity firm to carry out research',
+        'Led a team of four members to delivier from inception to deployment',
+        'Implemented a Burp Suite extension for script based attacks'
       ],
-      technologies: ['React', 'JavaScript ES6+', 'Redux', 'Testing']
+      technologies: ['Jython', 'JavaScript ES6+', 'BurpSuite', 'Testing']
     }
   ];
 
@@ -207,7 +205,7 @@ const Experience = () => {
                   <div className="timeline-header">
                     <h3>{item.title}</h3>
                     <div className="timeline-meta">
-                      <span className="company">{item.company}</span>
+                      <span className="company">{item.company || item.university}</span>
                       <span className="period">{item.period}</span>
                     </div>
                   </div>
@@ -215,22 +213,24 @@ const Experience = () => {
                   <p className="timeline-description">{item.description}</p>
                   
                   <div className="timeline-achievements">
-                    <h4>Key Achievements:</h4>
+                    <h4>{item.type === 'education' ? 'Key Subjects:' : 'Key Achievements:'}</h4>
                     <ul>
-                      {item.achievements.map((achievement, idx) => (
-                        <li key={idx}>{achievement}</li>
+                      {(item.achievements || item.subjects || []).map((item, idx) => (
+                        <li key={idx}>{item}</li>
                       ))}
                     </ul>
                   </div>
                   
-                  <div className="timeline-technologies">
-                    <h4>Technologies:</h4>
-                    <div className="tech-tags">
-                      {item.technologies.map((tech, idx) => (
-                        <span key={idx} className="tech-tag">{tech}</span>
-                      ))}
+                  {item.technologies && item.technologies.length > 0 && (
+                    <div className="timeline-technologies">
+                      <h4>Technologies:</h4>
+                      <div className="tech-tags">
+                        {item.technologies.map((tech, idx) => (
+                          <span key={idx} className="tech-tag">{tech}</span>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               </motion.div>
             ))}
