@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import './Hero.css';
 
 // Import the profile photo
@@ -11,7 +11,6 @@ const Hero = () => {
   const socialLinks = [
     { icon: FaGithub, href: 'https://github.com', label: 'GitHub' },
     { icon: FaLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: FaTwitter, href: 'https://twitter.com', label: 'Twitter' },
     { icon: FaEnvelope, href: 'mailto:your.email@example.com', label: 'Email' }
   ];
 

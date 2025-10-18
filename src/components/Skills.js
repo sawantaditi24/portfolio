@@ -173,29 +173,6 @@ const Skills = () => {
             ))}
           </div>
 
-          <motion.div className="skills-summary" variants={itemVariants}>
-            <div className="summary-card">
-              <h3>Technical Summary</h3>
-              <div className="summary-stats">
-                <div className="stat">
-                  <div className="stat-number">4+</div>
-                  <div className="stat-label">Years Experience</div>
-                </div>
-                <div className="stat">
-                  <div className="stat-number">25+</div>
-                  <div className="stat-label">Technologies</div>
-                </div>
-                <div className="stat">
-                  <div className="stat-number">50+</div>
-                  <div className="stat-label">Projects</div>
-                </div>
-                <div className="stat">
-                  <div className="stat-number">100%</div>
-                  <div className="stat-label">Dedication</div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>
