@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
@@ -40,27 +40,26 @@ const Contact = () => {
     {
       icon: FaEnvelope,
       title: 'Email',
-      value: 'aditi@example.com',
-      link: 'mailto:aditi@example.com'
+      value: 'sawantaditi24@gmail.com',
+      link: 'mailto:sawantaditi24@gmail.com'
     },
     {
       icon: FaPhone,
       title: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
+      value: '+1 (562) 686-1965',
+      link: 'tel:+15626861965'
     },
     {
       icon: FaMapMarkerAlt,
       title: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Los Angeles, CA',
       link: '#'
     }
   ];
 
   const socialLinks = [
-    { icon: FaLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: FaGithub, href: 'https://github.com', label: 'GitHub' },
-    { icon: FaTwitter, href: 'https://twitter.com', label: 'Twitter' }
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/sawant-aditi/', label: 'LinkedIn' },
+    { icon: FaGithub, href: 'https://github.com/sawantaditi24/ImageSenseAI', label: 'GitHub' }
   ];
 
   const containerVariants = {
