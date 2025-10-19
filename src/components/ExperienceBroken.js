@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { FaBriefcase, FaGraduationCap, FaAward } from 'react-icons/fa';
 import './Experience.css';
 
@@ -9,7 +10,7 @@ const Experience = () => {
     {
       title: 'Student Research Assistant',
       company: 'California State University, Long Beach',
-      period: 'August 2024 - Present',
+      period: '2024 - Present',
       type: 'experience',
       description: 'Built intelligent full-stack systems for freight safety and business analytics using FastAPI, Redis, and computer vision.',
       achievements: [
@@ -18,12 +19,12 @@ const Experience = () => {
         'Enhanced freight safety by 33% with object detection models.',
         'Mentored junior developers and conducted code reviews'
       ],
-      technologies: ['React', 'GenAI', 'LLMs', 'SQL', 'Docker']
+      technologies: ['React', 'GenAI', 'HTML/CSS', 'SQL', 'Docker']
     },
     {
       title: 'Software Engineer',
       company: 'Data Axle Solutions',
-      period: 'July 2022 - July 2024',
+      period: '2022 - 2024',
       type: 'experience',
       description: 'I was responsible for end-to-end feature development, functionality enhancements, and bug fixes. My work involved collaborating closely with cross-functional teams to design and implement new features that aligned with product goals, while also refining existing functionalities to improve user experience and performance.',
       achievements: [
@@ -32,12 +33,12 @@ const Experience = () => {
         'Enabled real-time data monitoring for 19M+ records, improving quality by 83%.',
         'Increased system reliability by 27% through automated testing pipelines.'
       ],
-      technologies: ['Python', 'React', 'Ruby on Rails', 'PostgreSQL', 'AWS', 'ElasticSearch']
+      technologies: ['Python', 'React', 'Ruby on Rails', 'PostgreSQL', 'AWS']
     },
     {
       title: 'Project Intern',
-      company: 'Amdocs',
-      period: 'February 2021 - July 2021',
+      company: 'WebCraft Studios',
+      period: '2020 - 2021',
       type: 'experience',
       description: 'Focused on creating engaging user interfaces and improving user experience.',
       achievements: [
@@ -46,7 +47,7 @@ const Experience = () => {
         'Achieved 95% test coverage with 100+ integration tests, reducing QA troubleshooting time by 45%',
         'Improved page load speed by 30%, enhancing user experience.'
       ],
-      technologies: ['Java', 'JavaScript', 'Bootstrap', 'jQuery', 'CI/CD']
+      technologies: ['Java', 'JavaScript', 'Bootstrap', 'jQuery']
     }
   ];
 
@@ -54,7 +55,7 @@ const Experience = () => {
     {
       title: 'Master of Science in Computer Science',
       university: 'California State University, Long Beach',
-      period: 'August 2024 - December 2025',
+      period: '2024 - 2025',
       type: 'education',
       description: 'Specialized in Software Engineering and Data Structures.',
       subjects: [
@@ -62,12 +63,12 @@ const Experience = () => {
         'Advanced Software Engineering',
         'Design Patterns',
         'Advanced Artificial Intelligence'
-      ],
+      ]
     },
     {
       title: 'Bachelors in Computer Engineering',
       university: 'Modern Education Society\'s College of Engineering',
-      period: 'August 2018 - April 2022',
+      period: '2018 - 2022',
       type: 'education',
       description: 'Foundation in computer science principles and programming.',
       subjects: [
@@ -96,7 +97,7 @@ const Experience = () => {
     {
       title: 'Burp Suite extension for script based attacks',
       company: 'Cybersecurist',
-      period: 'October 2021 - March 2022',
+      period: '2022',
       type: 'Research paper',
       description: 'Published research paper in IEEE Xplore conference.',
       achievements: [
@@ -121,18 +122,47 @@ const Experience = () => {
     }
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
   return (
     <section id="experience" className="experience">
       <div className="container">
-        <div className="experience-content">
-          <div className="experience-header">
+        <motion.div
+          className="experience-content"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.div className="experience-header" variants={itemVariants}>
             <h2>Experience & Education</h2>
             <p className="experience-intro">
               My professional journey and educational background that shaped my expertise in technology.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="experience-tabs">
+          <motion.div className="experience-tabs" variants={itemVariants}>
             <div className="tab-buttons">
               <button
                 className={`tab-btn ${activeTab === 'experience' ? 'active' : ''}`}
@@ -156,13 +186,20 @@ const Experience = () => {
                 Certifications
               </button>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="experience-timeline">
+          <motion.div 
+            className="experience-timeline"
+            variants={containerVariants}
+            key={activeTab}
+          >
             {getCurrentData().map((item, index) => (
-              <div
+              <motion.div
                 key={`${activeTab}-${index}`}
                 className="timeline-item"
+                variants={itemVariants}
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
               >
                 <div className="timeline-content">
                   <div className="timeline-header">
@@ -195,10 +232,10 @@ const Experience = () => {
                     </div>
                   )}
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

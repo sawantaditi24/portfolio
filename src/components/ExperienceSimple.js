@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { FaBriefcase, FaGraduationCap, FaAward } from 'react-icons/fa';
 import './Experience.css';
 
@@ -9,8 +10,7 @@ const Experience = () => {
     {
       title: 'Student Research Assistant',
       company: 'California State University, Long Beach',
-      period: 'August 2024 - Present',
-      type: 'experience',
+      period: '2024 - Present',
       description: 'Built intelligent full-stack systems for freight safety and business analytics using FastAPI, Redis, and computer vision.',
       achievements: [
         'Reduced investor research time by 28% through data aggregation.',
@@ -18,35 +18,20 @@ const Experience = () => {
         'Enhanced freight safety by 33% with object detection models.',
         'Mentored junior developers and conducted code reviews'
       ],
-      technologies: ['React', 'GenAI', 'LLMs', 'SQL', 'Docker']
+      technologies: ['React', 'GenAI', 'HTML/CSS', 'SQL', 'Docker']
     },
     {
       title: 'Software Engineer',
       company: 'Data Axle Solutions',
-      period: 'July 2022 - July 2024',
-      type: 'experience',
-      description: 'I was responsible for end-to-end feature development, functionality enhancements, and bug fixes. My work involved collaborating closely with cross-functional teams to design and implement new features that aligned with product goals, while also refining existing functionalities to improve user experience and performance.',
+      period: '2022 - 2024',
+      description: 'I was responsible for end-to-end feature development, functionality enhancements, and bug fixes.',
       achievements: [
         'Boosted data quality and query performance by 40% through custom ORM validations.',
         'Improved search scalability and speed by 65% with Elasticsearch integration.',
         'Enabled real-time data monitoring for 19M+ records, improving quality by 83%.',
         'Increased system reliability by 27% through automated testing pipelines.'
       ],
-      technologies: ['Python', 'React', 'Ruby on Rails', 'PostgreSQL', 'AWS', 'ElasticSearch']
-    },
-    {
-      title: 'Project Intern',
-      company: 'Amdocs',
-      period: 'February 2021 - July 2021',
-      type: 'experience',
-      description: 'Focused on creating engaging user interfaces and improving user experience.',
-      achievements: [
-        'Reduced delivery time by 2 days, increasing repeat purchases by 45% and cutting logistics costs.',
-        'Automated 70% of inventory checks for 1.5K+ assets, boosting operational efficiency.',
-        'Achieved 95% test coverage with 100+ integration tests, reducing QA troubleshooting time by 45%',
-        'Improved page load speed by 30%, enhancing user experience.'
-      ],
-      technologies: ['Java', 'JavaScript', 'Bootstrap', 'jQuery', 'CI/CD']
+      technologies: ['Python', 'React', 'Ruby on Rails', 'PostgreSQL', 'AWS']
     }
   ];
 
@@ -54,21 +39,19 @@ const Experience = () => {
     {
       title: 'Master of Science in Computer Science',
       university: 'California State University, Long Beach',
-      period: 'August 2024 - December 2025',
-      type: 'education',
+      period: '2024 - 2025',
       description: 'Specialized in Software Engineering and Data Structures.',
       subjects: [
         'Advanced Data Structures and Algorithms',
         'Advanced Software Engineering',
         'Design Patterns',
         'Advanced Artificial Intelligence'
-      ],
+      ]
     },
     {
       title: 'Bachelors in Computer Engineering',
       university: 'Modern Education Society\'s College of Engineering',
-      period: 'August 2018 - April 2022',
-      type: 'education',
+      period: '2018 - 2022',
       description: 'Foundation in computer science principles and programming.',
       subjects: [
         'Object Oriented Programming',
@@ -84,7 +67,6 @@ const Experience = () => {
       title: 'AWS Certified Cloud Practitioner',
       company: 'Amazon Web Services',
       period: 'October 2023 - October 2026',
-      type: 'certification',
       description: 'Professional certification in designing distributed systems on AWS.',
       achievements: [
         'Demonstrated expertise in AWS services and architecture',
@@ -96,8 +78,7 @@ const Experience = () => {
     {
       title: 'Burp Suite extension for script based attacks',
       company: 'Cybersecurist',
-      period: 'October 2021 - March 2022',
-      type: 'Research paper',
+      period: '2022',
       description: 'Published research paper in IEEE Xplore conference.',
       achievements: [
         'Secured funding from Cybersecurity firm to carry out research',
@@ -109,16 +90,10 @@ const Experience = () => {
   ];
 
   const getCurrentData = () => {
-    switch (activeTab) {
-      case 'experience':
-        return experience;
-      case 'education':
-        return education;
-      case 'certifications':
-        return certifications;
-      default:
-        return experience;
-    }
+    if (activeTab === 'experience') return experience;
+    if (activeTab === 'education') return education;
+    if (activeTab === 'certifications') return certifications;
+    return experience;
   };
 
   return (
@@ -160,10 +135,7 @@ const Experience = () => {
 
           <div className="experience-timeline">
             {getCurrentData().map((item, index) => (
-              <div
-                key={`${activeTab}-${index}`}
-                className="timeline-item"
-              >
+              <div key={`${activeTab}-${index}`} className="timeline-item">
                 <div className="timeline-content">
                   <div className="timeline-header">
                     <h3>{item.title}</h3>
@@ -176,7 +148,7 @@ const Experience = () => {
                   <p className="timeline-description">{item.description}</p>
                   
                   <div className="timeline-achievements">
-                    <h4>{item.type === 'education' ? 'Key Subjects:' : 'Key Achievements:'}</h4>
+                    <h4>{activeTab === 'education' ? 'Key Subjects:' : 'Key Achievements:'}</h4>
                     <ul>
                       {(item.achievements || item.subjects || []).map((item, idx) => (
                         <li key={idx}>{item}</li>

@@ -124,7 +124,7 @@
 
 .company {
   font-weight: 600;
-  color: var(--color-2);
+  color: var(--text-primary);
   font-size: 1.1rem;
 }
 
@@ -172,7 +172,7 @@
   content: '✓';
   position: absolute;
   left: 0;
-  color: var(--color-2);
+  color: var(--pink-primary);
   font-weight: bold;
   font-size: 1.1rem;
 }

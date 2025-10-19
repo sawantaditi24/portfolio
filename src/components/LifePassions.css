@@ -1,0 +1,504 @@
+.life-passions {
+  background: var(--bg-secondary);
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.life-passions::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(233, 30, 99, 0.03) 0%, rgba(248, 187, 217, 0.05) 100%);
+  pointer-events: none;
+}
+
+.life-passions-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.life-passions-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.life-passions-intro {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+.passions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.passion-card {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--gray-lighter);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+.passion-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.passion-card:hover::before {
+  transform: scaleX(1);
+}
+
+.passion-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: var(--shadow-heavy);
+  border-color: var(--pink-primary);
+}
+
+.passion-card.pink::before {
+  background: var(--gradient-primary);
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.passion-icon {
+  width: 70px;
+  height: 70px;
+  background: var(--gradient-primary);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 2rem;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-medium);
+  transition: all 0.3s ease;
+}
+
+.passion-card:hover .passion-icon {
+  transform: rotate(10deg) scale(1.1);
+  box-shadow: var(--shadow-heavy);
+}
+
+.passion-title-section h3 {
+  color: var(--text-primary);
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.passion-subtitle {
+  color: var(--pink-primary);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.card-content {
+  margin-top: 1.5rem;
+}
+
+.passion-description {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+
+.highlights-section {
+  margin-bottom: 2rem;
+}
+
+.highlights-section h4 {
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.highlights-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.highlights-section li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.highlights-section li::before {
+  content: '✨';
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2rem;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.2) rotate(180deg); }
+}
+
+.impact-quote-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.impact-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: var(--pink-light);
+  color: var(--pink-primary);
+  padding: 1.2rem 1.8rem;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+.impact-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.passion-quote {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: rgba(233, 30, 99, 0.05);
+  padding: 1.5rem;
+  border-radius: 15px;
+  border-left: 4px solid var(--pink-primary);
+}
+
+.passion-quote svg {
+  color: var(--pink-primary);
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.passion-quote em {
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.life-philosophy {
+  text-align: center;
+  margin-top: 5rem;
+  padding-top: 3rem;
+  border-top: 2px solid var(--gray-lighter);
+}
+
+.life-philosophy h3 {
+  color: var(--text-primary);
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.philosophy-item {
+  background: var(--white);
+  padding: 2.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--gray-lighter);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.philosophy-item:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-medium);
+  border-color: var(--pink-primary);
+}
+
+.philosophy-item svg {
+  font-size: 3rem;
+  color: var(--pink-primary);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.philosophy-item:hover svg {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.philosophy-item h4 {
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.philosophy-item p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.work-together-cta {
+  margin-top: 5rem;
+  padding: 4rem 0;
+  background: var(--gradient-hero);
+  border-radius: 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-together-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(233, 30, 99, 0.05) 0%, rgba(248, 187, 217, 0.1) 100%);
+  pointer-events: none;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.work-together-cta h3 {
+  color: var(--text-primary);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.work-together-cta p {
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 15px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-buttons .btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.cta-buttons .btn:hover::before {
+  left: 100%;
+}
+
+.cta-buttons .btn-primary {
+  background: var(--gradient-primary);
+  color: var(--white);
+  box-shadow: var(--shadow-medium);
+  border: 2px solid var(--pink-primary);
+}
+
+.cta-buttons .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-heavy);
+}
+
+.cta-buttons .btn-secondary {
+  background: var(--white);
+  color: var(--pink-primary);
+  border: 2px solid var(--pink-primary);
+  box-shadow: var(--shadow-light);
+}
+
+.cta-buttons .btn-secondary:hover {
+  background: var(--pink-primary);
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .life-passions {
+    padding: 4rem 0;
+  }
+
+  .passions-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .passion-card {
+    padding: 2rem;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .passion-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .philosophy-item {
+    padding: 2rem 1.5rem;
+  }
+
+  .work-together-cta {
+    margin-top: 3rem;
+    padding: 3rem 0;
+  }
+
+  .work-together-cta h3 {
+    font-size: 2rem;
+  }
+
+  .work-together-cta p {
+    font-size: 1.1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .life-passions-header h2 {
+    font-size: 2rem;
+  }
+
+  .life-passions-intro {
+    font-size: 1rem;
+  }
+
+  .passion-card {
+    padding: 1.5rem;
+  }
+
+  .passion-title-section h3 {
+    font-size: 1.4rem;
+  }
+
+  .passion-subtitle {
+    font-size: 1rem;
+  }
+
+  .philosophy-item {
+    padding: 1.5rem;
+  }
+
+  .philosophy-item svg {
+    font-size: 2.5rem;
+  }
+
+  .work-together-cta {
+    margin-top: 2rem;
+    padding: 2rem 0;
+  }
+
+  .work-together-cta h3 {
+    font-size: 1.8rem;
+  }
+
+  .work-together-cta p {
+    font-size: 1rem;
+  }
+
+  .cta-buttons .btn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+}

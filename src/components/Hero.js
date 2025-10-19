@@ -9,9 +9,9 @@ import profilePhoto from '../assets/images/profile-photo.jpeg';
 const Hero = () => {
 
   const socialLinks = [
-    { icon: FaGithub, href: 'https://github.com', label: 'GitHub' },
-    { icon: FaLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: FaEnvelope, href: 'mailto:your.email@example.com', label: 'Email' }
+    { icon: FaGithub, href: 'https://github.com/sawantaditi24/ImageSenseAI', label: 'GitHub' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/sawant-aditi/', label: 'LinkedIn' },
+    { icon: FaEnvelope, href: 'mailto:sawantaditi24@gmail.com', label: 'Email' }
   ];
 
   const containerVariants = {
@@ -99,14 +99,14 @@ const Hero = () => {
               className="hero-subtitle"
               variants={itemVariants}
             >
-              A passionate developer creating beautiful, functional, and user-centered digital experiences.
+              A passionate Software Developer creating beautiful, functional, and user-centered digital experiences.
             </motion.p>
             
             <motion.p 
               className="hero-description"
               variants={itemVariants}
             >
-              I specialize in modern web development with a focus on React, clean code, and exceptional user experiences. 
+              I specialize in Full-stack web development with a focus on clean code, and exceptional user experiences. 
               Let's build something amazing together!
             </motion.p>
 
@@ -171,7 +171,10 @@ const Hero = () => {
               </div>
               <div className="profile-info">
                 <h3>Aditi</h3>
-                <p>Full Stack Developer</p>
+                <h5>Masters Student in Computer Science</h5>
+                <h5>Student Research Assistant</h5>
+                <h5>Ex-Software Engineer</h5>
+                <h5>Ex-Project Intern</h5>
               </div>
             </div>
           </motion.div>

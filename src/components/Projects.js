@@ -1,90 +1,46 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaCode, FaMobile, FaDesktop } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import './Projects.css';
 
 const Projects = () => {
-  const [activeFilter, setActiveFilter] = useState('all');
 
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with React frontend, Node.js backend, and PostgreSQL database. Features include user authentication, payment processing, inventory management, and admin dashboard.',
+      title: 'ImageSenseAI',
+      description: 'An AI-powered web app that organizes and semantically searches screenshots using OCR and LLMs for effortless retrieval turning messy screenshots into a smart search.',
       image: '/api/placeholder/600/400',
       technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'AWS'],
       category: 'web',
-      github: 'https://github.com',
+      github: 'https://github.com/sawantaditi24/ImageSenseAI',
       live: 'https://example.com',
       featured: true
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features. Built with React and Socket.io.',
+      title: 'Socal Business Intelligence',
+      description: 'A comprehensive web application that helps businesses make data-driven location decisions in Southern California using real-time data, AI-powered recommendations, and interactive mapping.',
       image: '/api/placeholder/600/400',
       technologies: ['React', 'Socket.io', 'MongoDB', 'Express', 'JWT'],
       category: 'web',
-      github: 'https://github.com',
-      live: 'https://example.com',
+      github: 'https://github.com/sawantaditi24/socal-business-intelligence',
+      live: 'https://socal-business-intelligence.netlify.app/',
       featured: true
     },
     {
       id: 3,
-      title: 'Weather Dashboard',
+      title: 'Edge-Device',
       description: 'A responsive weather application with location-based forecasts, interactive maps, and detailed weather analytics. Integrates with multiple weather APIs.',
       image: '/api/placeholder/600/400',
       technologies: ['React', 'TypeScript', 'Chart.js', 'OpenWeather API'],
       category: 'web',
-      github: 'https://github.com',
-      live: 'https://example.com',
-      featured: false
-    },
-    {
-      id: 4,
-      title: 'Mobile Banking App',
-      description: 'A secure mobile banking application with biometric authentication, transaction history, bill payments, and financial analytics. Built with React Native.',
-      image: '/api/placeholder/600/400',
-      technologies: ['React Native', 'Node.js', 'MongoDB', 'JWT', 'Biometric'],
-      category: 'mobile',
-      github: 'https://github.com',
-      live: 'https://example.com',
-      featured: true
-    },
-    {
-      id: 5,
-      title: 'AI Chat Assistant',
-      description: 'An intelligent chat assistant powered by OpenAI GPT, featuring natural language processing, context awareness, and multi-language support.',
-      image: '/api/placeholder/600/400',
-      technologies: ['React', 'OpenAI API', 'Node.js', 'WebSocket', 'Redis'],
-      category: 'ai',
-      github: 'https://github.com',
-      live: 'https://example.com',
-      featured: false
-    },
-    {
-      id: 6,
-      title: 'Portfolio Website',
-      description: 'A modern, responsive portfolio website showcasing projects, skills, and experience. Built with React and Framer Motion for smooth animations.',
-      image: '/api/placeholder/600/400',
-      technologies: ['React', 'Framer Motion', 'CSS3', 'Responsive Design'],
-      category: 'web',
-      github: 'https://github.com',
+      github: 'https://github.com/sawantaditi24/Edge_Device',
       live: 'https://example.com',
       featured: false
     }
   ];
 
-  const filters = [
-    { key: 'all', label: 'All Projects', icon: FaCode },
-    { key: 'web', label: 'Web Apps', icon: FaDesktop },
-    { key: 'mobile', label: 'Mobile Apps', icon: FaMobile },
-    { key: 'ai', label: 'AI/ML', icon: FaCode }
-  ];
-
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -138,27 +94,12 @@ const Projects = () => {
             </p>
           </motion.div>
 
-          <motion.div className="projects-filters" variants={itemVariants}>
-            <div className="filter-buttons">
-              {filters.map((filter) => (
-                <button
-                  key={filter.key}
-                  className={`filter-btn ${activeFilter === filter.key ? 'active' : ''}`}
-                  onClick={() => setActiveFilter(filter.key)}
-                >
-                  <filter.icon />
-                  {filter.label}
-                </button>
-              ))}
-            </div>
-          </motion.div>
 
           <motion.div 
             className="projects-grid"
             variants={containerVariants}
-            key={activeFilter}
           >
-            {filteredProjects.map((project, index) => (
+            {projects.map((project, index) => (
               <motion.div
                 key={project.id}
                 className={`project-card ${project.featured ? 'featured' : ''}`}
@@ -214,25 +155,6 @@ const Projects = () => {
                 </div>
               </motion.div>
             ))}
-          </motion.div>
-
-          <motion.div className="projects-cta" variants={itemVariants}>
-            <div className="cta-content">
-              <h3>Interested in working together?</h3>
-              <p>Let's discuss your next project and bring your ideas to life.</p>
-              <motion.a 
-                href="#contact" 
-                className="btn btn-primary"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
-                Get In Touch
-              </motion.a>
-            </div>
           </motion.div>
         </motion.div>
       </div>

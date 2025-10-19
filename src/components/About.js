@@ -70,9 +70,9 @@ const About = () => {
           <motion.div className="about-header" variants={itemVariants}>
             <h2>About Me</h2>
             <p className="about-intro">
-              I'm a passionate developer with a love for creating digital experiences that make a difference. 
+            My passion lies in crafting intuitive user experiences, exploring modern architectures, and solving real-world problems through clean, efficient code.
               With a background in computer science and years of hands-on experience, I bring both technical 
-              expertise and creative problem-solving to every project.
+              expertise and creative problem-solving to every project. I go by the belief that great software can make everyday life a little better.
             </p>
           </motion.div>
 
@@ -82,7 +82,7 @@ const About = () => {
               <p>
                 My journey in technology began with curiosity and has evolved into a passion for building 
                 solutions that solve real-world problems. I specialize in modern web development, with 
-                expertise in React, Node.js, and cloud technologies.
+                expertise in Ful-stack development, system architecture and cloud technologies.
               </p>
               <p>
                 What drives me is the opportunity to create meaningful digital experiences that enhance 

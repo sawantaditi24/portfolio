@@ -11,8 +11,8 @@ const Header = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       
-      // Detect active section
-      const sections = ['home', 'about', 'experience', 'skills', 'projects', 'contact'];
+          // Detect active section
+          const sections = ['home', 'about', 'experience', 'skills', 'projects', 'leadership', 'life-passions', 'contact'];
       const scrollPosition = window.scrollY + 100;
       
       for (const section of sections) {
@@ -37,6 +37,8 @@ const Header = () => {
     { name: 'Experience', href: '#experience', id: 'experience' },
     { name: 'Skills', href: '#skills', id: 'skills' },
     { name: 'Projects', href: '#projects', id: 'projects' },
+    { name: 'Leadership', href: '#leadership', id: 'leadership' },
+    { name: 'Life & Passions', href: '#life-passions', id: 'life-passions' },
     { name: 'Contact', href: '#contact', id: 'contact' }
   ];
 

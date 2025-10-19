@@ -1,0 +1,287 @@
+.leadership {
+  background: var(--bg-primary);
+  padding: 6rem 0;
+  position: relative;
+}
+
+.leadership-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.leadership-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.leadership-intro {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.leadership-card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--gray-lighter);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.leadership-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.leadership-card:hover::before {
+  transform: scaleX(1);
+}
+
+.leadership-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-heavy);
+  border-color: var(--pink-primary);
+}
+
+.leadership-card.pink::before {
+  background: var(--gradient-primary);
+}
+
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--gradient-primary);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-medium);
+}
+
+
+.card-title-section h3 {
+  color: var(--text-primary);
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.organization {
+  color: var(--pink-primary);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+
+.period {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.card-content {
+  margin-top: 1.5rem;
+}
+
+.description {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.achievements-section {
+  margin-bottom: 1.5rem;
+}
+
+.achievements-section h4 {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.achievements-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.achievements-section li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.achievements-section li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--pink-primary);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+
+.impact-section {
+  margin-top: 1.5rem;
+}
+
+.impact-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: var(--pink-light);
+  color: var(--pink-primary);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: var(--shadow-light);
+}
+
+
+.leadership-values {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.leadership-values h3 {
+  color: var(--text-primary);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.value-item {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--gray-lighter);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.value-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.value-item svg {
+  font-size: 2.5rem;
+  color: var(--pink-primary);
+  margin-bottom: 1rem;
+}
+
+.value-item h4 {
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.value-item p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .leadership {
+    padding: 4rem 0;
+  }
+
+  .leadership-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .leadership-card {
+    padding: 2rem;
+  }
+
+  .card-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .card-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .value-item {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .leadership-header h2 {
+    font-size: 2rem;
+  }
+
+  .leadership-intro {
+    font-size: 1rem;
+  }
+
+  .leadership-card {
+    padding: 1.5rem;
+  }
+
+  .card-title-section h3 {
+    font-size: 1.2rem;
+  }
+
+  .organization {
+    font-size: 1rem;
+  }
+}

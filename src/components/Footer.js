@@ -7,10 +7,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: FaGithub, href: 'https://github.com', label: 'GitHub' },
-    { icon: FaLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: FaTwitter, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: FaEnvelope, href: 'mailto:aditi@example.com', label: 'Email' }
+    { icon: FaGithub, href: 'https://github.com/sawantaditi24/ImageSenseAI', label: 'GitHub' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/sawant-aditi/', label: 'LinkedIn' },
+    { icon: FaEnvelope, href: 'mailto:sawantaditi24@gmail.com', label: 'Email' }
   ];
 
   const quickLinks = [
@@ -72,7 +71,7 @@ const Footer = () => {
             <div className="footer-brand">
               <h3>Aditi</h3>
               <p>
-                A passionate developer creating beautiful, functional, and user-centered 
+                A passionate Software Developer creating beautiful, functional, and user-centered 
                 digital experiences. Let's build something amazing together!
               </p>
               <div className="footer-social">

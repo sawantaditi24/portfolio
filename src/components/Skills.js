@@ -12,7 +12,13 @@ import {
   FaDocker,
   FaDatabase,
   FaMobile,
-  FaCloud
+  FaCloud,
+  FaBrain,
+  FaRobot,
+  FaUsers,
+  FaLightbulb,
+  FaHandshake,
+  FaComments
 } from 'react-icons/fa';
 import './Skills.css';
 
@@ -64,6 +70,30 @@ const Skills = () => {
         { name: 'Mobile Dev', level: 75, icon: FaMobile },
         { name: 'DevOps', level: 78, icon: FaCloud },
         { name: 'Agile', level: 88, icon: FaGitAlt }
+      ]
+    },
+    {
+      title: 'AI & Machine Learning',
+      icon: FaBrain,
+      skills: [
+        { name: 'LLM Integration', level: 85, icon: FaRobot },
+        { name: 'Vector Embeddings', level: 80, icon: FaDatabase },
+        { name: 'RAG Systems', level: 82, icon: FaBrain },
+        { name: 'FastAPI', level: 88, icon: FaPython },
+        { name: 'LangChain', level: 75, icon: FaRobot },
+        { name: 'OpenAI API', level: 78, icon: FaBrain }
+      ]
+    },
+    {
+      title: 'Soft Skills',
+      icon: FaUsers,
+      skills: [
+        { name: 'Team Leadership', level: 90, icon: FaUsers },
+        { name: 'Problem Solving', level: 95, icon: FaLightbulb },
+        { name: 'Communication', level: 88, icon: FaComments },
+        { name: 'Project Management', level: 85, icon: FaHandshake },
+        { name: 'Mentoring', level: 82, icon: FaUsers },
+        { name: 'Adaptability', level: 90, icon: FaLightbulb }
       ]
     }
   ];
