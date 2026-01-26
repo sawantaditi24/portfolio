@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website built with React, featuring smooth animations and a beautiful color palette.
 
-## 🚀 Features
+## Features
 
 - **Modern Design**: Clean, professional layout with a sophisticated color palette
 - **Responsive**: Fully responsive design that works on all devices
@@ -11,7 +11,7 @@ A modern, responsive portfolio website built with React, featuring smooth animat
 - **Fast Performance**: Optimized for speed and performance
 - **SEO Friendly**: Built with SEO best practices in mind
 
-## 🎨 Color Palette
+## Color Palette
 
 The website uses a carefully crafted color palette:
 - Deep purplish-grey (#4a4a5c)
@@ -20,7 +20,7 @@ The website uses a carefully crafted color palette:
 - Light warm beige (#d4d4c4)
 - Light off-white grey (#f0f0f0)
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **React** - Frontend framework
 - **Framer Motion** - Animation library
@@ -28,7 +28,7 @@ The website uses a carefully crafted color palette:
 - **CSS3** - Styling with custom properties
 - **GitHub Pages** - Hosting
 
-## 📦 Installation
+## Installation
 
 1. Clone the repository:
 ```bash
@@ -48,7 +48,7 @@ npm start
 
 4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## 🚀 Deployment
+## Deployment
 
 ### Deploy to GitHub Pages
 
@@ -104,7 +104,7 @@ portfolio/
 └── README.md
 ```
 
-## 🎯 Sections
+## Sections
 
 - **Hero**: Introduction with call-to-action buttons
 - **About**: Personal information and values
@@ -114,7 +114,7 @@ portfolio/
 - **Contact**: Contact form and information
 - **Footer**: Additional links and social media
 
-## 🎨 Customization
+## Customization
 
 ### Colors
 Update the CSS custom properties in `App.css` to change the color scheme:
@@ -137,14 +137,14 @@ Update the content in each component file to match your information:
 - Projects in `Projects.js`
 - Contact information in `Contact.js`
 
-## 📱 Responsive Design
+## Responsive Design
 
 The website is fully responsive and works on:
 - Desktop (1200px+)
 - Tablet (768px - 1199px)
 - Mobile (320px - 767px)
 
-## 🔧 Development
+## Development
 
 ### Available Scripts
 
@@ -160,15 +160,15 @@ The website is fully responsive and works on:
 - Safari (latest)
 - Edge (latest)
 
-## 📄 License
+## License
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 🤝 Contributing
+## Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
 
-## 📞 Contact
+## Contact
 
 - **Email**: aditi@example.com
 - **LinkedIn**: [Your LinkedIn Profile]
