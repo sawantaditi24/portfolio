@@ -211,6 +211,29 @@
   transform: translateY(-2px);
 }
 
+.project-action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.project-action-buttons .btn {
+  flex: 0 0 auto;
+  width: auto;
+  min-width: 120px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
 .projects-cta {
   text-align: center;
   background: var(--gradient-secondary);
@@ -287,3 +310,29 @@
     padding: 1.5rem;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

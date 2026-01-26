@@ -14,30 +14,30 @@ const Projects = () => {
       technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'AWS'],
       category: 'web',
       github: 'https://github.com/sawantaditi24/ImageSenseAI',
-      live: 'https://example.com',
+      live: 'https://imagesenseai-1.onrender.com/',
       featured: true
     },
     {
       id: 2,
-      title: 'Socal Business Intelligence',
-      description: 'A comprehensive web application that helps businesses make data-driven location decisions in Southern California using real-time data, AI-powered recommendations, and interactive mapping.',
+      title: 'GateGrab',
+      description: 'An airport food delivery platform that connects hungry travelers with airport restaurants and delivery agents. Travelers can browse nearby restaurants, place orders, and have food delivered directly to their boarding gate with real-time tracking - solving the dilemma of missing flights while searching for food.',
       image: '/api/placeholder/600/400',
-      technologies: ['React', 'Socket.io', 'MongoDB', 'Express', 'JWT'],
+      technologies: ['React', 'Python', 'Node.js', 'Real-time Tracking', 'Express', 'WebSocket'],
       category: 'web',
-      github: 'https://github.com/sawantaditi24/socal-business-intelligence',
-      live: 'https://socal-business-intelligence.netlify.app/',
+      github: 'https://github.com/sawantaditi24/GateGrab',
+      live: 'https://gate-grab.vercel.app/',
       featured: true
     },
     {
       id: 3,
-      title: 'Edge-Device',
-      description: 'A responsive weather application with location-based forecasts, interactive maps, and detailed weather analytics. Integrates with multiple weather APIs.',
+      title: 'RoomSync',
+      description: 'A comprehensive platform designed to simplify accommodation and roommate search for international students at CSULB. Solves the challenge of finding compatible roommates and housing by providing advanced filtering (budget, preferences, lifestyle), real-time availability status, and an integrated marketplace for furniture and essentials - all in one student-focused platform.',
       image: '/api/placeholder/600/400',
-      technologies: ['React', 'TypeScript', 'Chart.js', 'OpenWeather API'],
+      technologies: ['React', 'Node.js', 'Database', 'Filtering System', 'Marketplace'],
       category: 'web',
-      github: 'https://github.com/sawantaditi24/Edge_Device',
+      github: 'https://github.com/sawantaditi24/RoomSync',
       live: 'https://example.com',
-      featured: false
+      featured: true
     }
   ];
 
@@ -106,31 +106,37 @@ const Projects = () => {
                 variants={projectVariants}
                 whileHover={{ y: -10 }}
                 transition={{ duration: 0.3 }}
+                onClick={() => window.open(project.github, '_blank', 'noopener,noreferrer')}
+                style={{ cursor: 'pointer' }}
               >
                 <div className="project-image">
                   <div className="project-placeholder">
                     <span>{project.title.charAt(0)}</span>
                   </div>
                   <div className="project-overlay">
-                    <div className="project-links">
+                    <div className="project-links" onClick={(e) => e.stopPropagation()}>
                       <a 
                         href={project.github} 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="project-link"
                         title="View Code"
+                        onClick={(e) => e.stopPropagation()}
                       >
                         <FaGithub />
                       </a>
-                      <a 
-                        href={project.live} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="project-link"
-                        title="Live Demo"
-                      >
-                        <FaExternalLinkAlt />
-                      </a>
+                      {project.live !== 'https://example.com' && (
+                        <a 
+                          href={project.live} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="project-link"
+                          title="Live Demo"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <FaExternalLinkAlt />
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -151,6 +157,29 @@ const Projects = () => {
                         {tech}
                       </span>
                     ))}
+                  </div>
+
+                  <div className="project-action-buttons" onClick={(e) => e.stopPropagation()}>
+                    <a 
+                      href={project.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="btn btn-secondary"
+                      title="View Code on GitHub"
+                    >
+                      <FaGithub /> GitHub
+                    </a>
+                    {project.live !== 'https://example.com' && (
+                      <a 
+                        href={project.live} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="btn btn-primary"
+                        title="View Live Demo"
+                      >
+                        <FaExternalLinkAlt /> Live Demo
+                      </a>
+                    )}
                   </div>
                 </div>
               </motion.div>

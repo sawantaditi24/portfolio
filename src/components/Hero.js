@@ -106,8 +106,9 @@ const Hero = () => {
               className="hero-description"
               variants={itemVariants}
             >
-              I specialize in Full-stack web development with a focus on clean code, and exceptional user experiences. 
-              Let's build something amazing together!
+              I specialize in Full-stack web development with a focus on clean code and exceptional user experiences. 
+              For me, the Software Development is not about hype, but about constraints, design decisions, and long-term thinking. 
+              I care about user experience as much as I care about building well-architected solutions.
             </motion.p>
 
             <motion.div 
@@ -170,7 +171,7 @@ const Hero = () => {
                 <div className="profile-ring"></div>
               </div>
               <div className="profile-info">
-                <h3>Aditi</h3>
+                <h3>Aditi Krishna Sawant</h3>
                 <h5>Masters Student in Computer Science</h5>
                 <h5>Student Research Assistant</h5>
                 <h5>Ex-Software Engineer</h5>
